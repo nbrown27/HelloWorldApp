@@ -1,0 +1,62 @@
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">User Registration</h1>
+    </div>  
+    <!-- /.col-lg-12 -->
+</div>
+<!-- /.row -->
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Registration Form
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <form role="form" name="registrationForm" novalidate>
+                            <div class="form-group" ng-class="{ 'has-error': registrationForm.firstName.$invalid && registrationForm.firstName.$dirty}">
+                                <label>First Name*</label>
+                                <input class="form-control" placeholder="Enter text" name="firstName" ng-model="firstName" ng-required="true">
+                            </div>
+                            <div class="form-group" ng-class="{ 'has-error': registrationForm.lastName.$invalid && registrationForm.lastName.$dirty }">
+                                <label>Last Name*</label>
+                                <input class="form-control" placeholder="Enter text" name="lastName" ng-model="lastName" ng-required="true">
+                            </div>
+                            <div class="form-group">
+                                <label>Address1</label>
+                                <input class="form-control" placeholder="Enter text" ng-model="address1">
+                            </div>
+                            <div class="form-group">
+                                <label>Address2</label>
+                                <input class="form-control" placeholder="Enter text" ng-model="address2">
+                            </div>
+                            <div class="form-group">
+                                <label>City</label>
+                                <input class="form-control" placeholder="Enter text" ng-model="city">
+                            </div>
+                            <div class="form-group" ng-class="{ 'has-error': registrationForm.state.$invalid && registrationForm.state.$dirty }">
+                                <label>State*</label>
+                                <input class="form-control" placeholder="Enter text" name="state" ng-model="state" ng-required="true" ng-minlength="2" ng-maxlength="2">
+                            </div>
+                            <div class="form-group" ng-class="{ 'has-error': registrationForm.zip.$invalid && registrationForm.zip.$dirty }">
+                                <label>Zip*</label>
+                                <input class="form-control" placeholder="Enter text" name="zip" ng-model="zip" ng-required="true" ng-pattern="/^(\d{5}(-\d{4})?|[A-Z]\d[A-Z] *\d[A-Z]\d)$/">
+                            </div>
+                            <div class="form-group" ng-class="{ 'has-error': registrationForm.country.$invalid && registrationForm.country.$dirty }">
+                                <label>Country*</label>
+                                <input class="form-control" placeholder="Enter text" name="country" ng-model="country" ng-required="true" ng-pattern="/^([U-U]{1}[S-S]{1})$/">
+                            </div>
+                            <button type="submit" class="btn btn-default" ng-click="submit()" ng-disabled="registrationForm.$invalid">Submit</button>
+                            <button type="reset" class="btn btn-default">Reset</button>
+                        </form>
+                    </div>
+                </div>
+                <!-- /.row (nested) -->
+            </div>
+            <!-- /.panel-body -->
+        </div>
+        <!-- /.panel -->
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
